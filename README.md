@@ -34,4 +34,4 @@ https://docs.google.com/spreadsheets/d/1ykDxYzQgo47Dquxjiep8bJs72wooCtWLTIy88zJR
 ### 你的apikey,secretkey,passphrase
 ![image](https://user-images.githubusercontent.com/24865458/154845538-a2d058a2-4d23-4b91-a089-d3e2a9c00489.png)
 ## 完成
-
+歡迎斗內Bnb chain:0xd208861F338724e781397A43d55375c2A47f6C8d
