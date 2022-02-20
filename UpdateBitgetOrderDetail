@@ -32,7 +32,7 @@ function bitget_order_detail(apikey,secretkey,passphrase,orderid,status,detail =
     Utilities.sleep(Math.floor(Math.random() * (4000 - 100 + 1)) + 100);
     }
    else{
-    detail = "無資料"
+    detail = 0
     }
  return detail
 }
