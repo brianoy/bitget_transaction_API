@@ -34,9 +34,10 @@ https://docs.google.com/spreadsheets/d/1ykDxYzQgo47Dquxjiep8bJs72wooCtWLTIy88zJR
 ### 你的apikey,secretkey,passphrase
 ![image](https://user-images.githubusercontent.com/24865458/154845538-a2d058a2-4d23-4b91-a089-d3e2a9c00489.png)
 ## 可能會遇到的問題
+### 1.未開放權限，請放心地按下允許
 ![image](https://user-images.githubusercontent.com/24865458/154935431-055132b4-e84b-4dd7-83ff-10b48e41d5fc.png)
 
-### 未開放權限，請放心地按下允許
+
 
 ## 完成
 歡迎斗內Bnb chain:0xd208861F338724e781397A43d55375c2A47f6C8d
