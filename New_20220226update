@@ -1,15 +1,14 @@
-function bitget_all_data_non(apikey,secretkey,passphrase,start,end,detail = []) {
- //var apikey = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B2').getValue();
- //var secretkey = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B3').getValue();
- //var passphrase = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B4').getValue();
- //var start = 1641916800000
- //var end = 1648310400000
- var counter = 0
+function bitget_all_data(apikey,secretkey,passphrase,start,end,detail = []) {
+ var apikey = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B2').getValue();
+ var secretkey = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B3').getValue();
+ var passphrase = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B4').getValue();
+ var start = 1641916800000
+ var end = 1648310400000
+ var counter = 100
  var method = 'GET'
  var requestPath = "/api/mix/v1/order/fills"
  var url = "https://api.bitget.com"
- var date = new Date();
- Logger.log(time)
+ var midtradeId = ""
  detail.push([
               "Unix時間(GMT+0)",
               "開/關倉 做多/空",
@@ -18,15 +17,16 @@ function bitget_all_data_non(apikey,secretkey,passphrase,start,end,detail = []) 
               "數量",
               "手續費",
               "tradeId",
-              "利潤"
+              "利潤(未包含手續)"
             ]);
- var midtime = 0;
- for (start; start < end; start = start + 86400000) {
-   midtime = start + 86400000
+
+while(counter != 0){
+   counter = 0
+   var date = new Date();
    var time = Math.floor((date.getTime())).toString();
-   var queryString = "symbol=BTCUSDT_UMCBL&startTime=" + start +"&endTime=" + midtime//注意時間是毫秒
+   var queryString = "symbol=BTCUSDT_UMCBL&startTime=" + start +"&endTime=" + end + "&lastEndId=" + midtradeId//注意時間是毫秒
    var unsign = (time + method + requestPath + "?" + queryString);
-   Logger.log(unsign)
+   Logger.log("URL:" + unsign)
    var signed_sha256 = Utilities.computeHmacSha256Signature(unsign,secretkey);
    var blob = Utilities.newBlob(signed_sha256);
    var signed_sha256_base64 = Utilities.base64Encode(blob.getBytes());
@@ -43,9 +43,7 @@ function bitget_all_data_non(apikey,secretkey,passphrase,start,end,detail = []) 
    data = UrlFetchApp.fetch(url + requestPath + "?" +queryString ,options);
    Logger.log(data);
    var json = JSON.parse(data);
-   //Logger.log(json);
    for(var nData in json.data){
-     //if(json.data[nData].side == "close_long"||json.data[nData].side == "close_short"){
             detail.push([
               json.data[nData].cTime,
               json.data[nData].side,
@@ -57,46 +55,17 @@ function bitget_all_data_non(apikey,secretkey,passphrase,start,end,detail = []) 
               json.data[nData].profit
             ]);
           counter++
-       //}
-   }
-   Logger.log(start);
-   Logger.log(counter);
-  }
-   var time = Math.floor((date.getTime())).toString();
-   var queryString = "symbol=BTCUSDT_UMCBL&startTime=" + start +"&endTime=" + end//注意時間是毫秒
-   var unsign = (time + method + requestPath + "?" + queryString);
-   var signed_sha256 = Utilities.computeHmacSha256Signature(unsign,secretkey);
-   var blob = Utilities.newBlob(signed_sha256);
-   var signed_sha256_base64 = Utilities.base64Encode(blob.getBytes());
-   var options = {
-     'headers': {
-      'ACCESS-KEY' : apikey,
-      'ACCESS-SIGN' : signed_sha256_base64,
-      'ACCESS-TIMESTAMP' : time,
-      'ACCESS-PASSPHRASE' : passphrase,
-      'Content-Type' : 'application/json',
-      'locale' : 'zh-CN'
      }
-   };
-   data = UrlFetchApp.fetch(url + requestPath + "?" +queryString ,options);
-   //Logger.log(data);
-   json = JSON.parse(data);
-   //Logger.log(json);
-   for(var nData in json.data){
-     //if(json.data[nData].side == "close_long"||json.data[nData].side == "close_short"){
-            detail.push([
-              json.data[nData].cTime,
-              json.data[nData].side,
-              json.data[nData].symbol,
-              json.data[nData].price,
-              json.data[nData].sizeQty,
-              json.data[nData].fee,
-              json.data[nData].tradeId,
-              json.data[nData].profit
-            ]);
-          counter++
-       //}
-   }
+   Logger.log(counter);
+   Logger.log(json.data[nData].tradeId);
+   if (counter == 100){
+    midtradeId = json.data[nData].tradeId
+    continue;
+     }
+   else{
+    break;
+     }
+  }
   return detail
 }
 
