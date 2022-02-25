@@ -17,7 +17,7 @@ function bitget_all_data(apikey,secretkey,passphrase,start,end,detail = []) {
               "數量",
               "手續費",
               "tradeId",
-              "利潤(未包含手續)"
+              "純利潤"
             ]);
 
 while(counter != 0){
@@ -52,7 +52,7 @@ while(counter != 0){
               json.data[nData].sizeQty,
               json.data[nData].fee,
               json.data[nData].tradeId,
-              json.data[nData].profit
+              Number(json.data[nData].profit) + Number(json.data[nData].fee)
             ]);
           counter++
      }
