@@ -1,9 +1,9 @@
 function bitget_all_data(apikey,secretkey,passphrase,start,end,detail = []) {
- var apikey = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B2').getValue();
- var secretkey = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B3').getValue();
- var passphrase = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B4').getValue();
- var start = 1641916800000
- var end = 1648310400000
+ //var apikey = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B2').getValue();
+ //var secretkey = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B3').getValue();
+ //var passphrase = SpreadsheetApp.getActive().getSheetByName('bitget設定').getRange('B4').getValue();
+ //var start = 1641916800000
+ //var end = 1648310400000
  var counter = 100
  var method = 'GET'
  var requestPath = "/api/mix/v1/order/fills"
