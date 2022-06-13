@@ -23,7 +23,7 @@ passphrase的部分很像密碼，在此處輸入後就不會再出現，須牢�
 
  passphrase:類似於你的api的密碼
 ## 第二步:建立google sheet的副本
-https://docs.google.com/spreadsheets/d/1ykDxYzQgo47Dquxjiep8bJs72wooCtWLTIy88zJRpEE/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1ykDxYzQgo47Dquxjiep8bJs72wooCtWLTIy88zJRpEE/
 
 點選左上角建立副本，你可以得到一份試算表出現在你的雲端硬碟
 ## 第三步:填入內容
@@ -40,4 +40,4 @@ https://docs.google.com/spreadsheets/d/1ykDxYzQgo47Dquxjiep8bJs72wooCtWLTIy88zJR
 
 
 ## 完成
-歡迎斗內Bnb chain:0xd208861F338724e781397A43d55375c2A47f6C8d
+歡迎斗內Bnb chain:0x42B4b6c844238d7b20F73Cb53A5140e5da145732
