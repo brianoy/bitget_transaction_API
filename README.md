@@ -1,7 +1,7 @@
 # bitget_合約帳戶明細API
 ![image](https://user-images.githubusercontent.com/24865458/154845599-ae553e9e-ecbe-4acf-8332-f55940795986.png)
 ### 基於google sheet的app script
-### 可以直接利用Bitget自帶的api自動抓取合約交易 開倉關倉 做多座空的時間點、利潤、手續費、交易量
+### 可以直接利用Bitget自帶的api自動抓取合約交易 開倉關倉 做多做空的時間點、利潤、手續費、交易量
 ### 沒有任何交易功能，敬請使用
 
 ## 第一步:申請API
