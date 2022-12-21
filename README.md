@@ -1,15 +1,15 @@
 # bitget_合約帳戶明細API
-![image](https://user-images.githubusercontent.com/24865458/154845599-ae553e9e-ecbe-4acf-8332-f55940795986.png)
+<img src="https://user-images.githubusercontent.com/24865458/154845599-ae553e9e-ecbe-4acf-8332-f55940795986.png" width="50%">
 ### 基於google sheet的app script
 ### 可以直接利用Bitget自帶的api自動抓取合約交易 開倉關倉 做多做空的時間點、利潤、手續費、交易量
 ### 沒有任何交易功能，敬請使用
 
 ## 第一步:申請API
-![image](https://user-images.githubusercontent.com/24865458/154844906-09d00271-70d9-452d-ae4e-479df442d785.png)
+<img src="https://user-images.githubusercontent.com/24865458/154844906-09d00271-70d9-452d-ae4e-479df442d785.png" width="50%">
 
 右上角點擊API管理，如果沒有綁定google authenticator的這時候會要求你綁定
 
-![image](https://user-images.githubusercontent.com/24865458/154845011-ddeab17d-cb12-4abd-a4c1-f8b65b20490d.png)
+<img src="https://user-images.githubusercontent.com/24865458/154845011-ddeab17d-cb12-4abd-a4c1-f8b65b20490d.png" width="50%">
 
 passphrase的部分很像密碼，在此處輸入後就不會再出現，須牢記
 
@@ -29,15 +29,15 @@ https://docs.google.com/spreadsheets/d/1ykDxYzQgo47Dquxjiep8bJs72wooCtWLTIy88zJR
 ## 第三步:填入內容
 此處就兩個部分需要填入
 ### 所需的時間區間
-![image](https://user-images.githubusercontent.com/24865458/154845414-cee6028c-40ae-4fda-837f-4e02594ed0b8.png)
+
+<img src="https://user-images.githubusercontent.com/24865458/154845414-cee6028c-40ae-4fda-837f-4e02594ed0b8.png" width="50%">
 
 ### 你的apikey,secretkey,passphrase
-![image](https://user-images.githubusercontent.com/24865458/154845538-a2d058a2-4d23-4b91-a089-d3e2a9c00489.png)
+<img src="https://user-images.githubusercontent.com/24865458/154845538-a2d058a2-4d23-4b91-a089-d3e2a9c00489.png" width="50%">
 ## 可能會遇到的問題
 ### 1.未開放權限，請放心地按下允許
-![image](https://user-images.githubusercontent.com/24865458/154935431-055132b4-e84b-4dd7-83ff-10b48e41d5fc.png)
-
+<img src="https://user-images.githubusercontent.com/24865458/154935431-055132b4-e84b-4dd7-83ff-10b48e41d5fc.png" width="50%">
 
 
 ## 完成
-歡迎斗內Bnb chain:0x42B4b6c844238d7b20F73Cb53A5140e5da145732
+歡迎斗內Bnb chain：0x42B4b6c844238d7b20F73Cb53A5140e5da145732
